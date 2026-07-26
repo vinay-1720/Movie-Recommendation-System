@@ -1,0 +1,30 @@
+.hero-banner {
+  height: 85vh;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.hero-content{
+    width:500px;
+    color:white;
+}
+.movie-title{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.movie-description{
+    font-size: 18px;
+    line-height:1.6;
+    margin-bottom: 20px;
+}
+
+.watch-btn {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
