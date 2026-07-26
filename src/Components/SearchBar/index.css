@@ -9,3 +9,11 @@
   border-radius: 8px;
   border: none;
 }
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  color: #1f80e0;
+}

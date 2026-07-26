@@ -8,8 +8,8 @@ const Home=()=>{
     return (
         <>
         <Navbar />
-        <SearchBar />
         <HeroBanner />
+        <SearchBar />
         
 
         <MovieRow title="Trending Movies"/>
