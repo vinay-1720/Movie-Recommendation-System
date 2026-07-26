@@ -1,0 +1,10 @@
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.movies-container img {
+  border-radius: 10px;
+}

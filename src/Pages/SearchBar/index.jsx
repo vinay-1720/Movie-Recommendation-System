@@ -1,3 +1,7 @@
+import Navbar from "../../Components/Navbar";
+import MovieRow from "../../components/MovieRow";
+
+
 const SearchBar=()=>{
     return (
         <div>
