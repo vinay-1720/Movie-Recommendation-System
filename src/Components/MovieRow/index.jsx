@@ -1,65 +1,42 @@
 import MovieCard from "../MovieCard";
 import "./index.css";
 
-const MovieRow=({title})=>{
-    const movies=[
-        {
-            id:1,
-            title:"spider-man",
-            poster: "https://picsum.photos/200/300?1",
-        },
-        {
-            id: 2,
-            title: "Batman",
-            poster: "https://picsum.photos/200/300?2",
-        },
-            {
-            id: 3,
-            title: "Interstellar",
-            poster: "https://picsum.photos/200/300?3",
-        },
-        {
-            id: 4,
-            title: "Avatar",
-            poster: "https://picsum.photos/200/300?4",
-        },
-        {
-            id: 4,
-            title: "Avatar",
-            poster: "https://picsum.photos/200/300?4",
-        },
-        {
-            id: 4,
-            title: "Avatar",
-            poster: "https://picsum.photos/200/300?4",
-        },
-        {
-            id: 4,
-            title: "Avatar",
-            poster: "https://picsum.photos/200/300?4",
-        },
-             
-        {
-            id: 4,
-            title: "Avatar",
-            poster: "https://picsum.photos/200/300?4",
-        },
-    ];
-    return (
-        <div className="movie-row">
-            <h2>{title}</h2>
-            <div className="movies-container">
-                {movies.map((movie)=>(
-                    <MovieCard 
-                        key={movie.id}
-                        title={movie.title}
-                        poster={movie.poster}
-                    />
-                
-                ))}
-            </div>
-        </div>
-    );
+const genreMap = {
+  28: "Action",
+  12: "Adventure",
+  16: "Animation",
+  35: "Comedy",
+  80: "Crime",
+  18: "Drama",
+  27: "Horror",
+  878: "Sci-Fi",
+  53: "Thriller",
+};
+
+const MovieRow = ({ title, movies }) => {
+  return (
+    <div className="movie-row">
+      <h2>{title}</h2>
+
+      <div className="movies-container">
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            title={movie.title}
+            posterPath={movie.poster_path}
+            releaseDate={movie.release_date}
+            genres={
+              movie.genre_ids
+                ?.slice(0, 2)
+                .map((id) => genreMap[id])
+                .join(", ")
+            }
+            rating={movie.vote_average?.toFixed(1)}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default MovieRow;

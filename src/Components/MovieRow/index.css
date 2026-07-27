@@ -1,10 +1,31 @@
 .movie-row {
-  padding: 20px 40px;
+  padding: 20px;
+}
+
+.movie-row h2 {
   color: white;
+  margin-bottom: 15px;
 }
 
 .movies-container {
   display: flex;
-  gap: 15px;
-  overflow-x: auto;
+  flex-wrap: nowrap;     /* IMPORTANT */
+  gap: 20px;
+  overflow-x: auto;      /* horizontal scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.movies-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movies-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+.movies-container::-webkit-scrollbar-track {
+  background: transparent;
 }

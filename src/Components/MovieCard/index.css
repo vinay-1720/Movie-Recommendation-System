@@ -1,16 +1,26 @@
 .movie-card {
-  min-width: 180px;
-  cursor: pointer;
+  min-width: 250px;
+  flex-shrink: 0;
 }
 
 .movie-poster {
-  width: 100%;
+  width: 250px;
+  height: 375px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
 .movie-title {
   color: white;
-  margin-top: 8px;
-  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  min-height: 50px;
+}
+
+.movie-info {
+  color: #b3b3b3;
   font-size: 14px;
+  margin: 2px 0;
 }
