@@ -18,6 +18,9 @@ const Navbar=()=>{
           <li>
             <Link to="/movies">Movies</Link>
           </li>
+          <li>
+            <Link to="/wishlist">Wishlist</Link>
+          </li>
 
           <li>
             <Link to="/search">Search</Link>

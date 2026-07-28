@@ -22,6 +22,7 @@ const MovieRow = ({ title, movies }) => {
         {movies.map((movie) => (
           <MovieCard
             key={movie.id}
+            id={movie.id}
             title={movie.title}
             posterPath={movie.poster_path}
             releaseDate={movie.release_date}

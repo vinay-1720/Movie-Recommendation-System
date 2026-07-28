@@ -1,0 +1,30 @@
+.wishlist-page {
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+}
+
+.wishlist-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.wishlist-card {
+  width: 220px;
+}
+
+.wishlist-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.remove-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
