@@ -14,6 +14,7 @@ import {
 
 
 const Home=()=>{
+    const [heroMovie, setHeroMovie] = useState(null);
     const [trending,setTrending]=useState([]);
     const [popular,setPopular]=useState([]);
     const [topRated,setTopRated]=useState([]);
@@ -22,11 +23,17 @@ const Home=()=>{
 
     useEffect(()=>{
         const fetchData=async ()=>{
-            setTrending(await getTrendingMovies());
+            const trendingMovies = await getTrendingMovies();
+
+            setTrending(trendingMovies);
             setPopular(await getPopularMovies());
             setTopRated(await getTopRatedMovies());
             setThriller(await getThrillerMovies());
             setIndian(await getIndianMovies());
+
+
+            const randomMovie=trendingMovies[Math.floor(Math.random()*trendingMovies.length)];
+            setHeroMovie(randomMovie);
         };
         fetchData();
     },[]);
@@ -34,7 +41,7 @@ const Home=()=>{
     return (
         <>
         <Navbar />
-        <HeroBanner />
+        <HeroBanner movie={heroMovie}/>
         <SearchBar />
 
         <MovieRow title="Trending Movies" movies={trending}/>
