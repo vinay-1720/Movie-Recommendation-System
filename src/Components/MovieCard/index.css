@@ -36,3 +36,49 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.movie-card {
+  min-width: 220px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.movie-poster:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+.wishlist-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.05);
+  background-color: #e50914;
+  color: white;
+}
+
+.movie-card {
+  min-width: 220px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+}

@@ -39,3 +39,17 @@
   cursor: pointer;
   border-radius: 6px;
 }
+
+.watch-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.watch-btn:hover {
+  transform: scale(1.05);
+  background-color: #e50914;
+  color: white;
+}

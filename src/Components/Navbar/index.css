@@ -18,3 +18,13 @@
     list-style: none;
     gap:25px;
 }
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e50914;
+}
