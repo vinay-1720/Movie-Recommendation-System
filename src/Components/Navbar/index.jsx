@@ -1,34 +1,56 @@
 import "./index.css";
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
+import { useState } from "react";
 
 
 const Navbar=()=>{
-    return(
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+
+    const handleSearch=()=>{
+      if(searchTerm.trim()!==""){
+        navigate(`/search?q=${searchTerm}`);
+        setSearchTerm("");
+      }
+    };
+
+  return (
     <nav className="navbar">
-      <div className="logo-container">
-        <h1 className="logo">MovieFlix</h1>
+      <h1 className="logo">MovieHub</h1>
+
+      <div className="nav-links">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+
+        <Link to="/movies" className="nav-link">
+          Movies
+        </Link>
+
+        <Link to="/wishlist" className="nav-link">
+          Wishlist
+        </Link>
       </div>
 
-      <div className="nav-container">
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
 
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
-            <Link to="/wishlist">Wishlist</Link>
-          </li>
-
-          <li>
-            <Link to="/search">Search</Link>
-          </li>
-        </ul>
+        <button
+          onClick={handleSearch}
+          className="search-btn"
+        >
+          Search
+        </button>
       </div>
     </nav>
-    );
+  );
 };
 
 export default Navbar;

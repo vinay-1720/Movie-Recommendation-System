@@ -1,7 +1,7 @@
-import Navbar from "../../Components/Navbar";
+import Navbar from "../../components/Navbar";
 import HeroBanner from "../../components/HeroBanner";
 import MovieRow from "../../components/MovieRow";
-import SearchBar from "../../Components/Searchbar";
+
 import { useState,useEffect } from "react";
 import {
   getTrendingMovies,
@@ -42,7 +42,7 @@ const Home=()=>{
         <>
         <Navbar />
         <HeroBanner movie={heroMovie}/>
-        <SearchBar />
+        
 
         <MovieRow title="Trending Movies" movies={trending}/>
         <MovieRow title="Popular Movies" movies={popular}/>

@@ -74,3 +74,15 @@ export const getMoviesByGenre = async (genreId) => {
     return [];
   }
 };
+
+export const searchMovies=async (query)=>{
+    try{
+        const response=await axios.get(
+            `https://api.themoviedb.org/3/search/movie?query=${query}`,options
+        );
+        return response.data.results;
+    }catch (error){
+        console.error(error);
+        return [];
+    }
+};

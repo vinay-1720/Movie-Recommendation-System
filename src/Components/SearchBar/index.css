@@ -1,19 +1,26 @@
 .search-container {
-  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
 }
 
 .search-input {
-  width: 100%;
-  max-width: 500px;
-  padding: 12px;
-  border-radius: 8px;
+  width: 350px;
+  padding: 10px;
+  border-radius: 20px;
   border: none;
-}
-.nav-links a {
-  text-decoration: none;
-  color: white;
+  outline: none;
 }
 
-.nav-links a:hover {
-  color: #1f80e0;
+.search-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #e50914;
+  color: white;
 }
