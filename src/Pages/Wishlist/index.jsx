@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import MovieCard from "../../components/MovieCard";
 import "./index.css";
-
+import { getMovieTrailer } from "../../services/tmdbApi";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -13,6 +13,18 @@ const Wishlist = () => {
 
     setWishlist(storedWishlist);
   }, []);
+
+
+  const handleTrailer = async (movieId) => {
+  const trailerUrl = await getMovieTrailer(movieId);
+
+  if (trailerUrl) {
+    window.open(trailerUrl, "_blank");
+  } else {
+    alert("Trailer not available");
+  }
+};
+
 
   const removeMovie = (movieId) => {
     const updatedWishlist = wishlist.filter(
@@ -57,6 +69,13 @@ const Wishlist = () => {
                 >
                   ❌ Remove
                 </button>
+              <button
+                className="trailer-btn"
+                onClick={() => handleTrailer(movie.id)}
+              >
+                ▶ Watch Trailer
+              </button>
+
               </div>
             ))}
           </div>

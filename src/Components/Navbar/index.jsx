@@ -15,6 +15,11 @@ const Navbar=()=>{
       }
     };
 
+    const handleLogout=()=>{
+      localStorage.removeItem("user");
+      navigate("/login");
+    };
+
   return (
     <nav className="navbar">
       <h1 className="logo">MovieHub</h1>
@@ -47,6 +52,9 @@ const Navbar=()=>{
           className="search-btn"
         >
           Search
+        </button>
+        <button className="logout-btn" onClick={handleLogout}>
+            Logout
         </button>
       </div>
     </nav>

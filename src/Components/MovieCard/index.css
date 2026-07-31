@@ -82,3 +82,20 @@
 .movie-card:hover {
   transform: scale(1.08);
 }
+
+.trailer-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color:black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.trailer-btn:hover {
+  background-color: #b20710;
+  transform: scale(1.03);
+}

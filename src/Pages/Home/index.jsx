@@ -31,9 +31,10 @@ const Home=()=>{
             setThriller(await getThrillerMovies());
             setIndian(await getIndianMovies());
 
-
+           
             const randomMovie=trendingMovies[Math.floor(Math.random()*trendingMovies.length)];
             setHeroMovie(randomMovie);
+            
         };
         fetchData();
     },[]);

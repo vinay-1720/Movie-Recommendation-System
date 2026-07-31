@@ -1,4 +1,5 @@
 import "./index.css";
+import { getMovieTrailer } from "../../services/tmdbApi";
 
 const MovieCard = ({
   id,
@@ -8,6 +9,16 @@ const MovieCard = ({
   genres,
   rating,
 }) => {
+  const handleTrailer = async () => {
+    const trailerUrl = await getMovieTrailer(id);
+
+    if (trailerUrl) {
+      window.open(trailerUrl, "_blank");
+    } else {
+      alert("Trailer is not Available");
+    }
+  };
+
   const addToWishlist = () => {
     const wishlist =
       JSON.parse(localStorage.getItem("wishlist")) || [];
@@ -56,6 +67,13 @@ const MovieCard = ({
         onClick={addToWishlist}
       >
         ❤️ Add to Wishlist
+      </button>
+
+      <button
+        className="trailer-btn"
+        onClick={handleTrailer}
+      >
+        ▶ Watch Trailer
       </button>
     </div>
   );

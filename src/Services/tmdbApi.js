@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const BASE_URL = "https://api.themoviedb.org/3";
+
 const options={
     headers:{
         Authorization: `Bearer ${import.meta.env.VITE_TMDB_ACCESS_TOKEN}`,
@@ -85,4 +87,46 @@ export const searchMovies=async (query)=>{
         console.error(error);
         return [];
     }
+};
+
+export const getMovieTrailer = async (movieId) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos`,
+      options
+    );
+
+    const videos = response.data.results;
+
+    // First preference: Official Trailer
+    let trailer = videos.find(
+      (video) =>
+        video.site === "YouTube" &&
+        video.type === "Trailer" &&
+        video.official === true
+    );
+
+    // Second preference: Any Trailer
+    if (!trailer) {
+      trailer = videos.find(
+        (video) =>
+          video.site === "YouTube" &&
+          video.type === "Trailer"
+      );
+    }
+
+    // Third preference: Any YouTube video
+    if (!trailer) {
+      trailer = videos.find(
+        (video) => video.site === "YouTube"
+      );
+    }
+
+    return trailer
+      ? `https://www.youtube.com/watch?v=${trailer.key}`
+      : null;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };
