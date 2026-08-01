@@ -1,0 +1,20 @@
+.movies-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.movies-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movies-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+.movies-page {
+  padding-top: 80px;
+}

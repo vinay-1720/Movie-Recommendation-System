@@ -1,0 +1,55 @@
+.hero-banner {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding-left: 50px;
+  max-width: 700px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.watch-btn {
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.watch-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.watch-btn:hover {
+  transform: scale(1.05);
+  background-color: #e50914;
+  color: white;
+}
